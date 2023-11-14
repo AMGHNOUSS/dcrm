@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="col-md-6 offset-md-3">
+        <h1>Record Customer</h1>
+        {{customer_record.id}}
+        {{customer_record.first_name}}
+        {{customer_record.last_name}}
+        {{customer_record.email}}
+        {{customer_record.phone}}
+        {{customer_record.address}}
+        {{customer_record.city}}
+        {{customer_record.state}}
+        {{customer_record.zipcode}}
+    </div>
+{% endblock %}

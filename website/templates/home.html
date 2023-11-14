@@ -3,7 +3,33 @@
 {% block content %}
 
 {% if user.is_authenticated %}
-<h1>hello world</h1>
+  <h1>Records</h1>
+  {% if records  %}
+      <table class="table table-striped table-bordered">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Fisrt Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">City</th>
+            <th scope="col">Create At</th>
+            <th scope="col">Id</th>
+          </tr>
+        </thead>
+        <tbody class="border-top-color">
+          {% for record in records %}
+            <tr>
+              <td>{{ record.first_name }}</td>
+              <td>{{ record.last_name }}</td>
+              <td>{{ record.email }}</td>
+              <td>{{ record.city }}</td>
+              <td>{{ record.create_at }}</td>
+              <td><a href="{% url 'record' record.id %}">{{ record.id }}</a></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+  {% endif %}
 {% else %}
 
 <div class="col-md-6 offset-md-3">
